@@ -32,7 +32,7 @@ Layer player2 = {               //this is the layer of the paddle for player 2
   (AbShape *)&rect10,
   {102, 148},                   //start position of the paddle 
   {0,0},{0,0},				    /* last & next pos */
-  COLOR_BLUE,
+  COLOR_RED,
   0
 };
   
@@ -58,7 +58,7 @@ Layer player1 = {		/**< this is the layer which holds the paddle of player 1 */
   (AbShape *)&rect10,
   {26,12},              //start position of the paddle 
   {0,0}, {0,0},				    /* last & next pos */
-  COLOR_RED,
+  COLOR_GREEN,
   &fieldLayer,
 };
 
@@ -225,8 +225,8 @@ void main()
   layerDraw(&player1);
   
   //added this method call to print the player 1 and player 2 titles on the lcd screen
-  drawString5x7(1,1, "player 1", COLOR_RED, COLOR_WHITE);
-  drawString5x7(80,152, "player 2", COLOR_BLUE, COLOR_WHITE);
+  drawString5x7(1,1, "player 1", COLOR_GREEN, COLOR_WHITE);
+  drawString5x7(80,152, "player 2", COLOR_RED, COLOR_WHITE);
   //drawString5x7(screenWidth/2,screenHeight/2, "Who Dis", COLOR_LIME_GREEN, COLOR_WHITE);
 
 
@@ -298,25 +298,25 @@ void wdt_c_handler()
     
     //if statements that determine the score in the game, and when the game is finished or not
     if(redScore == 0 && blueScore == 0){
-        drawString5x7(70,1, "Score: 0", COLOR_RED, COLOR_WHITE);
-        drawString5x7(1,152, "Score: 0", COLOR_BLUE, COLOR_WHITE);
+        drawString5x7(70,1, "Score: 0", COLOR_GREEN, COLOR_WHITE);
+        drawString5x7(1,152, "Score: 0", COLOR_RED, COLOR_WHITE);
     } if(redScore == 1){
-        drawString5x7(70,1, "Score: 1", COLOR_RED, COLOR_WHITE);
+        drawString5x7(70,1, "Score: 1", COLOR_GREEN, COLOR_WHITE);
     } if(redScore == 2){
-        drawString5x7(70,1, "Score: 2", COLOR_RED, COLOR_WHITE);
+        drawString5x7(70,1, "Score: 2", COLOR_GREEN, COLOR_WHITE);
     } if(redScore == 3){
-        drawString5x7(70,1, "Score: 3", COLOR_RED, COLOR_WHITE);
+        drawString5x7(70,1, "Score: 3", COLOR_GREEN, COLOR_WHITE);
     } if(redScore == 4){
-        drawString5x7(70,1, "Score: 4", COLOR_RED, COLOR_WHITE);
+        drawString5x7(70,1, "Score: 4", COLOR_GREEN, COLOR_WHITE);
         gameOver = 0;
     } if(blueScore == 1){
-        drawString5x7(1, 152, "Score: 1", COLOR_BLUE, COLOR_WHITE);
+        drawString5x7(1, 152, "Score: 1", COLOR_RED, COLOR_WHITE);
     } if(blueScore == 2){
-        drawString5x7(1, 152, "Score: 2", COLOR_BLUE, COLOR_WHITE);
+        drawString5x7(1, 152, "Score: 2", COLOR_RED, COLOR_WHITE);
     } if(blueScore == 3){
-        drawString5x7(1, 152, "Score: 3", COLOR_BLUE, COLOR_WHITE);
+        drawString5x7(1, 152, "Score: 3", COLOR_RED, COLOR_WHITE);
     } if(blueScore == 4){
-        drawString5x7(1, 152, "Score: 4", COLOR_BLUE, COLOR_WHITE);
+        drawString5x7(1, 152, "Score: 4", COLOR_RED, COLOR_WHITE);
         gameOver = 0;
     }
      //redrawScreen = 1;
